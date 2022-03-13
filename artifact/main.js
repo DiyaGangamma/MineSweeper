@@ -10,6 +10,26 @@ function toggleNightMode(e) {
     e.target.childNodes[1].textContent = state;
 }
 
+//Start - Code to enable and disable Sound effects
+const soundtoggle = document.getElementById("soundtoggle");
+soundtoggle.addEventListener("click", setSoundEffects);
+
+function setSoundEffects(e) {
+    e.preventDefault();
+    const onOrOff = document.getElementById("soundOnOFF").textContent;
+    if (onOrOff == "ON") {
+        document.getElementById("soundOnOFF").textContent = "OFF";
+        document.getElementById('onSoundId').src = "assets/nosound.png";
+    }
+
+    else {
+        document.getElementById("soundOnOFF").textContent = "ON";
+        document.getElementById('onSoundId').src = "assets/sound.png";
+    }
+
+}
+//End
+
 // A temporary solution
 const date = new Date();
 const currentHour = date.getHours();

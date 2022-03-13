@@ -74,9 +74,20 @@ define(["require", "exports", "./util/pub-sub", "./util/session"], function (req
                 return;
             }
             this.setState(CellState.Revealed);
+            if (document.getElementById("soundOnOFF").textContent == "ON") {
+                var bite = new Audio();
+                bite.src = "assets/bite.mp3";
+                bite.play();
+            }
             pub_sub_1.PubSub.publish(pub_sub_1.EVENT_CELL_REVEALED, this);
         }
         explode() {
+            if (document.getElementById("soundOnOFF").textContent == "ON") {
+                var boop = new Audio();
+                boop.src = "assets/boop.mp3";
+                boop.play();
+                boop.pause();
+            }
             this.setState(CellState.Exploаded);
             pub_sub_1.PubSub.publish(pub_sub_1.EVENT_GAME_OVER);
         }
@@ -87,6 +98,11 @@ define(["require", "exports", "./util/pub-sub", "./util/session"], function (req
             // Reveal not exploaded mines
             if (this.state !== CellState.Exploаded) {
                 this.setState(CellState.RevealedMine);
+                if (document.getElementById("soundOnOFF").textContent == "ON") {
+                    var plunger = new Audio();
+                    plunger.src = "assets/plunger.mp3";
+                    plunger.play();
+                }
             }
         }
         revealFlag() {
