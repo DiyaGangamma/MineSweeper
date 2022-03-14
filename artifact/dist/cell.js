@@ -1,6 +1,8 @@
+
 define(["require", "exports", "./util/pub-sub", "./util/session"], function (require, exports, pub_sub_1, session_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+
     exports.Cell = void 0;
     var CellState;
     (function (CellState) {
@@ -14,6 +16,7 @@ define(["require", "exports", "./util/pub-sub", "./util/session"], function (req
     })(CellState || (CellState = {}));
     const VALUE_DEFAULT = -2;
     const VALUE_MINE = -1;
+    
     class Cell {
         constructor(row, col) {
             this.row = row;
@@ -31,6 +34,8 @@ define(["require", "exports", "./util/pub-sub", "./util/session"], function (req
             this.el.classList.add("cell");
             this.el.addEventListener("click", this);
             this.el.addEventListener("contextmenu", this);
+           
+
         }
         getRow() {
             return this.row;
@@ -44,6 +49,7 @@ define(["require", "exports", "./util/pub-sub", "./util/session"], function (req
         setState(state) {
             this.el.classList.remove(`state-${this.state}`);
             this.el.classList.add(`state-${state}`);
+
             this.state = state;
         }
         setMine() {
@@ -66,6 +72,7 @@ define(["require", "exports", "./util/pub-sub", "./util/session"], function (req
             this.setState(CellState.WronglyFlagged);
         }
         reveal() {
+            console.log(this)
             if (this.state !== CellState.Default)
                 return;
             pub_sub_1.PubSub.publish(pub_sub_1.EVENT_CELL_CLICKED, this);
@@ -116,9 +123,12 @@ define(["require", "exports", "./util/pub-sub", "./util/session"], function (req
                     break;
             }
         }
+
+
         handleEvent(e) {
             switch (e.type) {
                 case "click":
+                
                     this.reveal();
                     break;
                 case "contextmenu":
