@@ -1,4 +1,3 @@
-
 define(["require", "exports", "./session"], function (require, exports, session_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });

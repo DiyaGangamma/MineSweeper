@@ -1,53 +1,23 @@
 /**
  * Night mode toggle
  */
-
- /*function getScript(source, callback) {
-    var el = document.createElement('script');
-     el.onload = callback;
-    el.src = source;
-
-    
-    
-    document.body.appendChild(el);
-}*/
-
-
- 
 const darkModeToggle = document.getElementById("dark-mode-toggle");
 darkModeToggle.addEventListener("click", toggleNightMode);
 
 function toggleNightMode(e) {
-    
     e.preventDefault();
-
-    const state = document.body.classList.toggle('night') ? "ON" : "OFF";
-if (state=="ON"){
-     const state2 = document.querySelector('main');
-     state2.style.backgroundColor='#1a0000';
- }
- else
- {
-    const state2 = document.querySelector('main');
-     state2.style.backgroundColor='#bdbdbd';
- }
-     
- 
- e.target.childNodes[1].textContent = state;
-    
-console.log(state)
-    
-
+    const state = document.body.classList.toggle('night') ? "OFF" : "ON";
+    e.target.childNodes[1].textContent = state;
 }
 
 // A temporary solution
-/*const date = new Date();
+const date = new Date();
 const currentHour = date.getHours();
 const nigthModeStartHour = 21;
 const nigthModeEndHour = 7;
 if (currentHour >= nigthModeStartHour || currentHour <= nigthModeEndHour) {
     darkModeToggle.click();
-}*/
+}
 
 /**
  * Version fetcher

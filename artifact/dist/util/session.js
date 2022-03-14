@@ -29,23 +29,3 @@ define(["require", "exports"], function (require, exports) {
     exports.Session = Session;
     Session.data = new Map();
 });
-
-/*function darkmode(state){
-           
-   var col = document.getElementsByClassName("cell state-default");
-  
-            if (state =="OFF")
-{  
-     for (var i=0; i < col.length; i++) {
-       // col[i].style.backgroundImage="url(./img.jpg)";
-       col[i].style.backgroundColor='red';
-            } 
-       }
-    else 
-    {
-     for (var i=0; i < col.length; i++) {
-        col[i].style.backgroundColor="#cccccc" ;}
-
-    }
-
-        }*/
