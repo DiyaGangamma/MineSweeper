@@ -256,3 +256,14 @@ footer ul#version li:first-child {
     border-left: 0 none;
     padding-left: 0;
 }
+
+a:link, a:visited {
+    background-color: #191C24;
+    border-color: #191C24;
+    color: #fff;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}
