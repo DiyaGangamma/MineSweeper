@@ -8,5 +8,6 @@ define(["require", "exports", "./game", "./config", "./pairer/cantorPairer", "./
         firstClick: config_1.FIRST_CLICK.GuaranteedCascade,
         debug: false,
     };
+    document.getElementById("difficultyLevel").textContent = config.mode ;
     new game_1.Game(config);
 });
