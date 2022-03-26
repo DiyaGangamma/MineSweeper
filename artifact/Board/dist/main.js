@@ -2,12 +2,11 @@ define(["require", "exports", "./game", "./config", "./pairer/cantorPairer", "./
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const config = {
-        mode: config_1.MODE_NAME.Expert,
+        mode: (sessionStorage.length != 0) ? sessionStorage.getItem("mode"): config_1.MODE_NAME.Beginner,
         encoder: binaryToBase64UrlEncoderV2_1.BinaryToBase64UrlEncoderV2.prototype,
         modePairer: cantorPairer_1.CantorPairer.prototype,
         firstClick: config_1.FIRST_CLICK.GuaranteedCascade,
         debug: false,
     };
-    document.getElementById("difficultyLevel").textContent = config.mode ;
     new game_1.Game(config);
 });

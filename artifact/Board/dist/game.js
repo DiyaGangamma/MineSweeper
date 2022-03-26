@@ -82,10 +82,39 @@ define(["require", "exports", "./board", "./timer", "./counter", "./config", "./
                 state = this.board.getState();
             }
             else if (this.urlTool.isHashSet()) {
-                mode = this.urlTool.extractMode();
+                var e = sessionStorage.getItem("mode");
+
+                if (e == "Beginner") {
+                    mode = {
+                        rows: 9,
+                        cols: 9,
+                        mines: 10,
+                    };
+                }
+                else if (e == "Intermediate") {
+                    mode = {
+                        rows: 16,
+                        cols: 16,
+                        mines: 40,
+                    };
+                }
+                else if (e == "Expert") {
+                    mode = {
+                        rows: 16,
+                        cols: 30,
+                        mines: 99,
+                    }
+                }
+
+
+                //mode = this.urlTool.extractMode();
                 // Optional chaining workaround
                 if (mode == null && this.board != null) {
-                    mode = this.board.getMode();
+                    mode = {
+                        rows: 9,
+                        cols: 9,
+                        mines: 10,
+                    };//this.board.getMode();
                 }
                 else if (mode == null) {
                     mode = config_1.BOARD_CONFIG[this.config.mode];

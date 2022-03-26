@@ -93,3 +93,25 @@ function chooseFavIcon(e) {
 }
 
 chooseFavIcon(window.matchMedia('(prefers-color-scheme: dark)'));
+
+
+window.onload = function () {
+    if (sessionStorage.length != 0) {
+        var selItem = sessionStorage.getItem("mode");
+        let element = document.getElementById("gameMode");
+        element.value = selItem;
+    }
+
+}
+
+function levelChange(){
+    var e = document.getElementById("gameMode");
+    var selVal = e.options[e.selectedIndex].text;
+    sessionStorage.setItem("mode", selVal);
+    document.location.reload(true)
+
+}
+
+function clearSessionStorage() {
+    sessionStorage.clear();
+}
