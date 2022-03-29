@@ -23,6 +23,15 @@
                     </select>
                 </div>
                 <div style="float:left" id="mines-counter" class="control"></div>
+                
+                <span style="float:left" id="mineselection" class ="control">
+                    <select id="mine" required>
+                        <option value="Original">Original</option>
+                        <option value="Modern">Modern</option>
+                        <option value="Happy">Happy</option>
+                    </select>
+                </span>
+                
             </div>  
             <div class="buttons-wrapper">
                 <button type="button" id="reset" class="control">RESET</button>
@@ -36,9 +45,12 @@
         </div>
         <div id="board"></div>
     </main>
+    
     <footer>
         <button type="button" class="rounded-pill " href="#" id="dark-mode-toggle">DARK MODE <span>OFF</span></button>
 
+
+       
         <!--<ul id="version">
             <li>
                 <a href="http://github.com/rdlf0/minesweeper/releases/latest" target="blank"

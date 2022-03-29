@@ -143,8 +143,12 @@ main.night {
 
 
 .cell.state-revealed,
-.cell.state-revealedMine,
-.cell.state-exploaded,
+.cell.state-revealedMine1,
+.cell.state-revealedMine2,
+.cell.state-revealedMine3,
+.cell.state-exploaded1,
+.cell.state-exploaded2,
+.cell.state-exploaded3,
 .cell.state-wronglyFlagged {
     background-color: #bdbdbd;
     border-style: solid none none solid;
@@ -164,12 +168,22 @@ main.night {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIzMXB4IiBoZWlnaHQ9IjMxcHgiPgogICAgPGRlZnM+CiAgICAgICAgPHRleHQgaWQ9ImF4Yk1VeWlnRCIgeD0iMiIgeT0iMzAiIGZvbnQtc2l6ZT0iNDBweCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLCBBcmlhbCIgZm9udC13ZWlnaHQ9IjkwMCIgZm9udC1zdHlsZT0ibm9ybWFsIiBzdHlsZT0ibGluZS1oZWlnaHQ6IDQwcHgiPj88L3RleHQ+CiAgICA8L2RlZnM+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNheGJNVXlpZ0QiIGZpbGw9IiMwMDAwMDAiPjwvdXNlPgo8L3N2Zz4=);
 }
 
-.cell.state-revealedMine,
-.cell.state-exploaded {
+.cell.state-revealedMine1,
+.cell.state-exploaded1 {
     background-image: url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjMDAwMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4NC42IDg0LjYiIHg9IjBweCIgeT0iMHB4Ij48dGl0bGU+Ym9zcy1pY29ucy1saW55LWV4cG9ydDwvdGl0bGU+PHBhdGggZD0iTTgyLjEsMzkuOEg3MC44OGEyOC41MywyOC41MywwLDAsMC02LjYtMTZsMi41NC0yLjUzYTIuNSwyLjUsMCwxLDAtMy41NC0zLjUzbC0yLjUzLDIuNTNhMjguNTMsMjguNTMsMCwwLDAtMTYtNi42VjIuNWEyLjUsMi41LDAsMCwwLTUsMFYxMy43MWEyOC40NywyOC40NywwLDAsMC0xNS45NCw2LjYxbC0yLjUzLTIuNTNhMi41LDIuNSwwLDAsMC0zLjU0LDMuNTNsMi41NCwyLjU0QTI4LjQ3LDI4LjQ3LDAsMCwwLDEzLjcyLDM5LjhIMi41YTIuNSwyLjUsMCwwLDAsMCw1SDEzLjcyYTI4LjY4LDI4LjY4LDAsMCwwLDYuNiwxNS45NGwtMi41MywyLjUzYTIuNTIsMi41MiwwLDAsMCwwLDMuNTQsMi41MSwyLjUxLDAsMCwwLDMuNTQsMGwyLjUzLTIuNTNhMjguNjgsMjguNjgsMCwwLDAsMTUuOTQsNi42VjgyLjFhMi41LDIuNSwwLDAsMCw1LDBWNzAuODhhMjguNDcsMjguNDcsMCwwLDAsMTUuOTQtNi42MWwyLjU0LDIuNTRhMi40OSwyLjQ5LDAsMCwwLDEuNzcuNzMsMi40NSwyLjQ1LDAsMCwwLDEuNzYtLjczLDIuNSwyLjUsMCwwLDAsMC0zLjU0bC0yLjUzLTIuNTNBMjguNDcsMjguNDcsMCwwLDAsNzAuODksNDQuOEg4Mi4xYTIuNSwyLjUsMCwwLDAsMC01Wm0tNDIuNzUtNGE1LjkyLDUuOTIsMCwwLDEtMy41NywzLjUsNS44MSw1LjgxLDAsMCwxLTIsLjM3LDYsNiwwLDAsMS02LTYsNS44Myw1LjgzLDAsMCwxLC4zNy0yQTUuOTEsNS45MSwwLDAsMSwzMS41NywyOGE1Ljc2LDUuNzYsMCwwLDEsMi4xNi0uNDEsNiw2LDAsMCwxLDYsNkE1Ljc2LDUuNzYsMCwwLDEsMzkuMzUsMzUuODFaIj48L3BhdGg+PC9zdmc+);
 }
 
-.cell.state-exploaded {
+.cell.state-revealedMine2,
+.cell.state-exploaded2 {
+    background-image: url(assets/test.png);
+}
+
+.cell.state-revealedMine3,
+.cell.state-exploaded3 {
+    background-image: url(assets/happy.png);
+}
+
+.cell.state-exploaded, .cell.state-exploaded1, .cell.state-exploaded2, .cell.state-exploaded3 {
     background-color: #ff0000;
 }
 
@@ -283,6 +297,15 @@ option {
 }
 
 #gameMode {
+    color: red;
+    background-color: black;
+    height: 28px;
+    font-size: 15rem;
+    font-family: Courier;
+    font-weight: bold;
+}
+
+#mine {
     color: red;
     background-color: black;
     height: 28px;
