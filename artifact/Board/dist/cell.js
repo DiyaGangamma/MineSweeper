@@ -10,8 +10,12 @@ define(["require", "exports", "./util/pub-sub", "./util/session"], function (req
         CellState["Flagged"] = "flagged";
         CellState["Questioned"] = "questioned";
         CellState["Revealed"] = "revealed";
-        CellState["RevealedMine"] = "revealedMine";
-        CellState["Explo\u0430ded"] = "exploaded";
+        CellState["RevealedMine1"] = "revealedMine1";
+        CellState["RevealedMine2"] = "revealedMine2";
+        CellState["RevealedMine3"] = "revealedMine3";
+        CellState["Explo\u0430ded1"] = "exploaded1";
+        CellState["Explo\u0430ded2"] = "exploaded2";
+        CellState["Explo\u0430ded3"] = "exploaded3";
         CellState["WronglyFlagged"] = "wronglyFlagged";
     })(CellState || (CellState = {}));
     const VALUE_DEFAULT = -2;
@@ -72,7 +76,6 @@ define(["require", "exports", "./util/pub-sub", "./util/session"], function (req
             this.setState(CellState.WronglyFlagged);
         }
         reveal() {
-            console.log(this)
             if (this.state !== CellState.Default)
                 return;
             pub_sub_1.PubSub.publish(pub_sub_1.EVENT_CELL_CLICKED, this);
@@ -106,7 +109,16 @@ define(["require", "exports", "./util/pub-sub", "./util/session"], function (req
                 boop.play();
                 boop.pause();
             }
-            this.setState(CellState.Exploаded);
+            // this.setState(CellState.Exploаded1);
+            var mineTypeSelect = document.getElementById("mine");
+            var selectedText = mineTypeSelect.options[mineTypeSelect.selectedIndex].text;
+            if (selectedText == "Modern"){
+                this.setState(CellState.Exploаded2);
+            } else if (selectedText == "Happy"){
+                this.setState(CellState.Exploаded3);
+            } else {
+                this.setState(CellState.Exploаded1);
+            }
             pub_sub_1.PubSub.publish(pub_sub_1.EVENT_GAME_OVER);
         }
         revealMine() {
@@ -115,7 +127,16 @@ define(["require", "exports", "./util/pub-sub", "./util/session"], function (req
                 return;
             // Reveal not exploaded mines
             if (this.state !== CellState.Exploаded) {
-                this.setState(CellState.RevealedMine);
+
+                var mineTypeSelect = document.getElementById("mine");
+                var selectedText = mineTypeSelect.options[mineTypeSelect.selectedIndex].text;
+                if (selectedText == "Modern"){
+                    this.setState(CellState.RevealedMine2);
+                } else if (selectedText == "Happy"){
+                    this.setState(CellState.RevealedMine3);
+                } else {
+                    this.setState(CellState.RevealedMine1);
+                }
                 if (document.getElementById("soundOnOFF").textContent == "ON") {
                     var plunger = new Audio();
                     plunger.src = "assets/plunger.mp3";

@@ -44,6 +44,15 @@
                     </select>
                 </div>
                 <div style="float:left" id="mines-counter" class="control"></div>
+                
+                <span style="float:left" id="mineselection" class ="control">
+                    <select id="mine" required>
+                        <option value="Original">Original</option>
+                        <option value="Modern">Modern</option>
+                        <option value="Happy">Happy</option>
+                    </select>
+                </span>
+                
             </div>  
             <div class="buttons-wrapper">
                 <button type="button" id="reset" class="control">RESET</button>
@@ -57,17 +66,36 @@
         </div>
         <div id="board"></div>
     </main>
+
       <div id="modal"class="modal" role="modal">
                      
                                <label id="instruction">You must first click a square</label>
                                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><span class="close">&times;</span></button>
                                 
                             </div>
+
     <footer>
         
      
       
 
+
+       
+        <!--<ul id="version">
+            <li>
+                <a href="http://github.com/rdlf0/minesweeper/releases/latest" target="blank"
+                   title="Check out the changelog">
+                    Version <span id="version_string"></span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/rdlf0/minesweeper" target="blank"
+                   title="Find the source code at GitHub">GitHub</a>
+            </li>
+        </ul>-->
+        <a href="../Homepage.html" onclick="clearSessionStorage(); return true;">
+            <img id="homeicon" src="HomeIcon.png">
+        </a>
     </footer>
     <script type="text/javascript" src="main.js"></script>
 </body>
