@@ -81,11 +81,22 @@ define(["require", "exports", "./util/pub-sub", "./util/session"], function (req
                 return;
             }
             this.setState(CellState.Revealed);
+           var inst = document.getElementById("instruction").innerHTML;
+          
+            if(inst =='You must first click a square'){
+            document.getElementById("instruction").innerHTML='The revealed number signifies the number of mines around the cell';
+                } 
+                else 
+                {
+            document.getElementById("instruction").innerHTML='Flag the cells which you suspect a contan a mine, reveal others to finish the game ';   
+                }
+           
             if (document.getElementById("soundOnOFF").textContent == "ON") {
                 var bite = new Audio();
                 bite.src = "assets/bite.mp3";
                 bite.play();
             }
+           
             pub_sub_1.PubSub.publish(pub_sub_1.EVENT_CELL_REVEALED, this);
         }
         explode() {

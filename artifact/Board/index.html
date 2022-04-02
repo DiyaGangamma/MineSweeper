@@ -12,7 +12,28 @@
 </head>
 
 <body>
+    <div>
+        <button type="button" class="rounded-pill " href="#" id="dark-mode-toggle">DARK MODE <span>OFF</span></button>
+
+        <!--<ul id="version">
+            <li>
+                <a href="http://github.com/rdlf0/minesweeper/releases/latest" target="blank"
+                   title="Check out the changelog">
+                    Version <span id="version_string"></span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/rdlf0/minesweeper" target="blank"
+                   title="Find the source code at GitHub">GitHub</a>
+            </li>
+        </ul>-->
+
+        <a href="../Homepage.html" onclick="clearSessionStorage(); return true;">
+            <img id="homeicon" src="HomeIcon.png">
+        </a></div>
+
     <main oncontextmenu="return false">
+
         <div id="controls">
             <div>
                 <div id="gamemodediv" style="float:left">
@@ -36,29 +57,54 @@
         </div>
         <div id="board"></div>
     </main>
+      <div id="modal"class="modal" role="modal">
+                     
+                               <label id="instruction">You must first click a square</label>
+                                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><span class="close">&times;</span></button>
+                                
+                            </div>
     <footer>
-        <button type="button" class="rounded-pill " href="#" id="dark-mode-toggle">DARK MODE <span>OFF</span></button>
+        
+     
+      
 
-        <!--<ul id="version">
-            <li>
-                <a href="http://github.com/rdlf0/minesweeper/releases/latest" target="blank"
-                   title="Check out the changelog">
-                    Version <span id="version_string"></span>
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/rdlf0/minesweeper" target="blank"
-                   title="Find the source code at GitHub">GitHub</a>
-            </li>
-        </ul>-->
-        <a href="../Homepage.html" onclick="clearSessionStorage(); return true;">
-            <img id="homeicon" src="HomeIcon.png">
-        </a>
     </footer>
     <script type="text/javascript" src="main.js"></script>
 </body>
 
 <style>
+   .modal{
+     position: absolute;
+  right: 20%;
+  padding: 20px;
+  background-color: #bdbdbd; 
+  color: black;
+  margin-bottom: 15px;
+  width: 80%;
+  border-radius: 15.5rem;
+max-width: 700px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size: 16px
+}
+
+ 
+
+ .btn-close{
+  color: black;
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+   margin-top: 1px;
+     margin-right: 2px;
+     position:absolute;
+     top:0;
+     right:0;border-radius: 10rem}
+
+
+    
+    
     .rounded-pill{
     border-radius:50rem;
     color: #fff;
@@ -68,5 +114,16 @@
     line-height: 1.5
 }
 </style>
+
+<script>
+    var span = document.getElementsByClassName("close")[0];
+  
+  span.onclick = function() {
+  modal.style.display = "none";
+  
+
+}
+
+</script>
 </html>
 
