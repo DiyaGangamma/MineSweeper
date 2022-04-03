@@ -76,6 +76,7 @@ define(["require", "exports", "./util/pub-sub", "./util/session"], function (req
             this.setState(CellState.WronglyFlagged);
         }
         reveal() {
+             var inst = document.getElementById("instruction").innerHTML;
             if (this.state !== CellState.Default)
                 return;
             pub_sub_1.PubSub.publish(pub_sub_1.EVENT_CELL_CLICKED, this);
@@ -84,9 +85,9 @@ define(["require", "exports", "./util/pub-sub", "./util/session"], function (req
                 return;
             }
             this.setState(CellState.Revealed);
-           var inst = document.getElementById("instruction").innerHTML;
           
-            if(inst =='You must first click a square'){
+
+            if(inst =='You must first click on a cell'){
             document.getElementById("instruction").innerHTML='The revealed number signifies the number of mines around the cell';
                 } 
                 else 

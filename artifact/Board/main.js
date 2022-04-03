@@ -19,17 +19,30 @@ darkModeToggle.addEventListener("click", toggleNightMode);
 
 function toggleNightMode(e) {
     
+     back2=document.querySelector('html');
+     back2.style.backgroundImage='none';
     e.preventDefault();
 
-    const state = document.body.classList.toggle('night') ? "ON" : "OFF";
-if (state=="ON"){
+    const state = document.body.classList.toggle('night') ? "OFF" : "ON";
+if (state=="OFF"){
      const state2 = document.querySelector('main');
      state2.style.backgroundColor='#1a0000';
+     const modal1=document.getElementById('modal');
+     modal1.style.backgroundColor='#1a0000';
+     modal1.style.color='red';
+
+     back.style.backgroundImage='assets/wp8105154-theme-red-wallpapers.jpg';
+
+     
  }
  else
  {
     const state2 = document.querySelector('main');
      state2.style.backgroundColor='#bdbdbd';
+     const modal1=document.getElementById('modal');
+     modal1.style.backgroundColor='#bdbdbd';
+     modal1.style.color='black';
+    
  }
      
  
