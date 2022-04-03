@@ -12,19 +12,10 @@
 </head>
 
 <body>
-    <div>
-        <button type="button" class="rounded-pill " href="#" id="dark-mode-toggle">DARK MODE <span>OFF</span></button>
 
-
-        <a href="../Homepage.html" onclick="clearSessionStorage(); return true;">
-            <img id="homeicon" src="HomeIcon.png">
-        </a>
-    </div>
-
-    <main oncontextmenu="return false">
-        <div id="controls">
-            <div>
-                <div id="gamemodediv" style="float:left">
+    <div id="funcs" class="funcs" >
+         <div>
+                <div id="gamemodediv" style="float:left;  padding: 10px; position:relative; left:400px">
                     <img id="clock" src="assets/level.png" height="20" width="20" />
                     <select id="gameMode" required onchange="levelChange()" style="display:block;">
                         <option value="Beginner">Beginner</option>
@@ -32,29 +23,48 @@
                         <option value="Expert">Expert</option>
                     </select>
                 </div>
-            </div>
-            <div>
-                <img id="clock" src="assets/Count.png" height="20" width="20" />
-                <div id="mines-counter" class="control"></div>
-            </div>
-            <div>
-                
-                <span id="mineselection" class="control">
+         </div>
+
+
+         <div> 
+                <div id="mineselection"  style="float:left; padding: 18px;  position:relative; left:400px ">
                     <img id="clock" src="assets/test.png" height="20" width="20" />
                     <select id="mine" required style="display:block;">
                         <option value="Original">Original</option>
                         <option value="Modern">Modern</option>
                         <option value="Happy">Happy</option>
                     </select>
-                </span>
-            </div>
-            <div class="buttons-wrapper">   
-                <button type="button" id="reset" class="control">RESET</button>
-                <button type="button" id="replay" class="control">REPLAY</button>
-                <button type="button" id="soundtoggle" class="control">
+                </div>
+        </div>
+
+           <div>
+         <button type="button" id="soundtoggle" style='position:relative; top:30px; right: 15px'>
                     <span id="soundOnOFF" style="display:none;">ON</span>
                     <img id="onSoundId" src="assets/sound.png" height="20" width="20" />
                 </button>
+           
+        <button type="button" class="rounded-pill " href="#" id="dark-mode-toggle" style="color: red;">DARK MODE <span>OFF</span></button>
+
+        <a href="../Homepage.html" onclick="clearSessionStorage(); return true;" style='position:relative; top:25px;' >
+            <img id="homeicon" src="HomeIcon.png">
+        </a>
+    </div>
+        
+    </div>
+    <br><br>
+
+    <main oncontextmenu="return false">
+        <div id="controls">
+           
+            <div>
+                <img id="clock" src="assets/Count.png" height="20" width="20" />
+                <div id="mines-counter" class="control"></div>
+            </div>
+          
+            <div class="buttons-wrapper">   
+                <button type="button" id="reset" class="control">RESET</button>
+                <button type="button" id="replay" class="control">REPLAY</button>
+               
             </div>
             <div>
                 <img id="clock" src="assets/Clock.png" height="20" width="20" />
@@ -75,9 +85,7 @@
 
 
 
-        <a href="../Homepage.html" onclick="clearSessionStorage(); return true;">
-            <img id="homeicon" src="HomeIcon.png">
-        </a>
+       
     </footer>
     <script type="text/javascript" src="main.js"></script>
 </body>
@@ -118,13 +126,18 @@
 
 
     .rounded-pill {
-        border-radius: 50rem;
+        position: relative;
+        top: 24px;
+        border-radius: 10rem;
         color: #fff;
         background-color: #191C24;
-        border-color: #191C24;
+        border-color: white;
         margin: .5rem;
-        line-height: 1.5
+        line-height: 2;
+       
     }
+
+
 </style>
 
 <script>
