@@ -19,12 +19,10 @@
 
 /* Slideshow container */
 
-body {
-    background-image: url("background.jpg");
-}
-
 .slideheader {
-    background-image: url("background.jpg");
+    background-image: url("background.png");
+    background-repeat:no-repeat;
+    background-size:100%;
 }
 .slideshow-container {
     max-width: 1000px;
@@ -61,6 +59,8 @@ body {
 
 #Previcon, #Nexticon {
     width: 50px;
+    background-color: antiquewhite;
+    border-radius:50rem;
 }
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
@@ -125,6 +125,6 @@ a:link, a:visited {
 
 #homeicon {
     width: 50px;
-    margin-bottom: -20px;
+    margin-bottom: -10px;
     border-radius: 50rem;
 }
