@@ -299,6 +299,7 @@ option {
     width: 50px;
     margin-bottom: -20px;
     border-radius: 50rem;
+    margin-left:10px;
 }
 
 #gamemodediv{
