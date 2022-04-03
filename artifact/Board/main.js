@@ -31,7 +31,7 @@ if (state=="OFF"){
      modal1.style.backgroundColor='#1a0000';
      modal1.style.color='red';
 
-     back.style.backgroundImage='assets/wp8105154-theme-red-wallpapers.jpg';
+     //back.style.backgroundImage='assets/wp8105154-theme-red-wallpapers.jpg';
 
      
  }
