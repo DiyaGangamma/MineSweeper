@@ -6,7 +6,7 @@
     <title>Minesweeper</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="assets/favicon-light.svg" data-href-light="assets/favicon-dark.svg"
-        data-href-dark="assets/favicon-light.svg" type="image/svg+xml" />
+          data-href-dark="assets/favicon-light.svg" type="image/svg+xml" />
     <script data-main="dist/main" src="require.js"></script>
     <link rel="stylesheet" href="styles.css" />
 </head>
@@ -15,46 +15,40 @@
     <div>
         <button type="button" class="rounded-pill " href="#" id="dark-mode-toggle">DARK MODE <span>OFF</span></button>
 
-        <!--<ul id="version">
-            <li>
-                <a href="http://github.com/rdlf0/minesweeper/releases/latest" target="blank"
-                   title="Check out the changelog">
-                    Version <span id="version_string"></span>
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/rdlf0/minesweeper" target="blank"
-                   title="Find the source code at GitHub">GitHub</a>
-            </li>
-        </ul>-->
 
         <a href="../Homepage.html" onclick="clearSessionStorage(); return true;">
             <img id="homeicon" src="HomeIcon.png">
-        </a></div>
+        </a>
+    </div>
 
     <main oncontextmenu="return false">
-
         <div id="controls">
             <div>
                 <div id="gamemodediv" style="float:left">
-                    <select id="gameMode" required onchange="levelChange()">
+                    <img id="clock" src="assets/level.png" height="20" width="20" />
+                    <select id="gameMode" required onchange="levelChange()" style="display:block;">
                         <option value="Beginner">Beginner</option>
                         <option value="Intermediate">Intermediate</option>
                         <option value="Expert">Expert</option>
                     </select>
                 </div>
-                <div style="float:left" id="mines-counter" class="control"></div>
+            </div>
+            <div>
+                <img id="clock" src="assets/Count.png" height="20" width="20" />
+                <div id="mines-counter" class="control"></div>
+            </div>
+            <div>
                 
-                <span style="float:left" id="mineselection" class ="control">
-                    <select id="mine" required>
+                <span id="mineselection" class="control">
+                    <img id="clock" src="assets/test.png" height="20" width="20" />
+                    <select id="mine" required style="display:block;">
                         <option value="Original">Original</option>
                         <option value="Modern">Modern</option>
                         <option value="Happy">Happy</option>
                     </select>
                 </span>
-                
-            </div>  
-            <div class="buttons-wrapper">
+            </div>
+            <div class="buttons-wrapper">   
                 <button type="button" id="reset" class="control">RESET</button>
                 <button type="button" id="replay" class="control">REPLAY</button>
                 <button type="button" id="soundtoggle" class="control">
@@ -62,37 +56,25 @@
                     <img id="onSoundId" src="assets/sound.png" height="20" width="20" />
                 </button>
             </div>
-            <div id="timer" class="control" title="0m 0s">000</div>
+            <div>
+                <img id="clock" src="assets/Clock.png" height="20" width="20" />
+                <div id="timer" class="control" title="0m 0s">000</div>
+            </div>
         </div>
         <div id="board"></div>
     </main>
 
-      <div id="modal"class="modal" role="modal">
-                     
-                               <label id="instruction">You must first click a square</label>
-                                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><span class="close">&times;</span></button>
-                                
-                            </div>
+    <div id="modal" class="modal" role="modal">
+
+        <label id="instruction">You must first click a square</label>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><span class="close">&times;</span></button>
+
+    </div>
 
     <footer>
-        
-     
-      
 
 
-       
-        <!--<ul id="version">
-            <li>
-                <a href="http://github.com/rdlf0/minesweeper/releases/latest" target="blank"
-                   title="Check out the changelog">
-                    Version <span id="version_string"></span>
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/rdlf0/minesweeper" target="blank"
-                   title="Find the source code at GitHub">GitHub</a>
-            </li>
-        </ul>-->
+
         <a href="../Homepage.html" onclick="clearSessionStorage(); return true;">
             <img id="homeicon" src="HomeIcon.png">
         </a>
@@ -101,56 +83,58 @@
 </body>
 
 <style>
-   .modal{
-     position: absolute;
-  right: 20%;
-  padding: 20px;
-  background-color: #bdbdbd; 
-  color: black;
-  margin-bottom: 15px;
-  width: 80%;
-  border-radius: 15.5rem;
-max-width: 700px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size: 16px
-}
-
- 
-
- .btn-close{
-  color: black;
-  float: right;
-  font-size: 16px;
-  font-weight: bold;
-   margin-top: 1px;
-     margin-right: 2px;
-     position:absolute;
-     top:0;
-     right:0;border-radius: 10rem}
+    .modal {
+        position: absolute;
+        right: 20%;
+        padding: 20px;
+        background-color: #bdbdbd;
+        color: black;
+        margin-bottom: 15px;
+        width: 80%;
+        border-radius: 15.5rem;
+        max-width: 700px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px
+    }
 
 
-    
-    
-    .rounded-pill{
-    border-radius:50rem;
-    color: #fff;
-    background-color: #191C24;
-    border-color: #191C24;
-    margin: .5rem;
-    line-height: 1.5
-}
+
+    .btn-close {
+        color: black;
+        float: right;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 1px;
+        margin-right: 2px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 10rem
+    }
+
+
+
+
+    .rounded-pill {
+        border-radius: 50rem;
+        color: #fff;
+        background-color: #191C24;
+        border-color: #191C24;
+        margin: .5rem;
+        line-height: 1.5
+    }
 </style>
 
 <script>
     var span = document.getElementsByClassName("close")[0];
-  
-  span.onclick = function() {
-  modal.style.display = "none";
-  
 
-}
+    span.onclick = function () {
+        modal.style.display = "none";
+
+
+    }
 
 </script>
 </html>

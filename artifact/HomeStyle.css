@@ -8,7 +8,7 @@
     background-image: url("Capture1.png");
     background-color: black;
     background-position: auto;
-    background-size: 95%;
+    background-size: 100%;
     position: fixed;
     background-repeat: no-repeat;
 }
@@ -16,11 +16,10 @@
 
 .container {
   position: absolute;
-  bottom: 3%;
+  bottom: -3%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: #f1f1f1;
   color: blue;
   font-size: 16px;
   padding: 16px 30px;
@@ -48,7 +47,6 @@
   outline: none;
   color: darkblue;
   padding: 14px 16px;
-  background-color: white;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 1rem 2rem; /* Important for vertical align on mobile phones */
 }
@@ -60,7 +58,6 @@
 
 
 a:link, a:visited {
-    background-color: #f44336;
     color: white;
     padding: 15px 25px;
     text-align: center;
@@ -68,9 +65,9 @@ a:link, a:visited {
     display: inline-block;
 }
 
-a:hover, a:active {
-    background-color: red;
+#helpicon{
+    border-radius:50rem;
+    width:80px;
 }
-
 
 

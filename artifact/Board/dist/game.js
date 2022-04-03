@@ -24,24 +24,28 @@ define(["require", "exports", "./board", "./timer", "./counter", "./config", "./
             return this.config;
         }
         reset() {
-            if (session_1.Session.get("debug")) {
-                console.debug('======= RESET =======');
-            }
-            this.updateUrlHash(true);
-            this.timer.stop();
-            this.isReset = true;
-            this.isReplay = false;
-            this.resetBtn.innerHTML = "RESET";
-            this.initialize();
+            if (confirm("This action is irreversible. Do you really want to RESET?") == true) {
+                if (session_1.Session.get("debug")) {
+                    console.debug('======= RESET =======');
+                }
+                this.updateUrlHash(true);
+                this.timer.stop();
+                this.isReset = true;
+                this.isReplay = false;
+                this.resetBtn.innerHTML = "RESET";
+                this.initialize();
+            }         
         }
         replay() {
-            if (session_1.Session.get("debug")) {
-                console.debug('======= REPLAY =======');
-            }
-            this.timer.stop();
-            this.isReset = false;
-            this.isReplay = true;
-            this.initialize();
+            if (confirm("This action is irreversible. Do you really want to REPLAY?") == true) {
+                if (session_1.Session.get("debug")) {
+                    console.debug('======= REPLAY =======');
+                }
+                this.timer.stop();
+                this.isReset = false;
+                this.isReplay = true;
+                this.initialize();
+            }   
         }
         handleHashChange() {
             if (session_1.Session.get("debug")) {
